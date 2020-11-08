@@ -1,0 +1,31 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://www.youtube.com/watch?v=J6rVaFzOEP8&ab_channel=TraversyMedia",
+      "name": "Henryque",
+      "birth": 925171200000,
+      "gender": "H",
+      "services": "Crossfit, Natação",
+      "created_at": 1604330138983
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://www.youtube.com/watch?v=qn67xPzc1CA&ab_channel=ManuelStagars",
+      "name": "Felype",
+      "birth": 875491200000,
+      "gender": "H",
+      "services": "Natação",
+      "created_at": 1604330165341
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://www.youtube.com/watch?v=r5tz4VpTeL4&ab_channel=Rocketseat",
+      "name": "Ariely",
+      "birth": 739065600000,
+      "gender": "F",
+      "services": "Musculação",
+      "created_at": 1604330445982
+    }
+  ]
+}
