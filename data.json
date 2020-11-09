@@ -5,8 +5,8 @@
       "avatar_url": "https://www.youtube.com/watch?v=J6rVaFzOEP8&ab_channel=TraversyMedia",
       "name": "Henryque",
       "birth": 925171200000,
-      "gender": "H",
-      "services": "Crossfit, Natação",
+      "gender": "M",
+      "services": "Crossfit, Natação, Musculação",
       "created_at": 1604330138983
     },
     {
@@ -14,8 +14,8 @@
       "avatar_url": "https://www.youtube.com/watch?v=qn67xPzc1CA&ab_channel=ManuelStagars",
       "name": "Felype",
       "birth": 875491200000,
-      "gender": "H",
-      "services": "Natação",
+      "gender": "M",
+      "services": "Natação, Crossfit",
       "created_at": 1604330165341
     },
     {
