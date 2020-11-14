@@ -1,5 +1,5 @@
 module.exports = {
-    age: (timestamp) => {
+    age: function (timestamp) {
         const today = new Date();
         const birthDate = new Date(timestamp);
     
@@ -16,6 +16,18 @@ module.exports = {
         }
     
         return age;
+    },
+    date: function (timestamp) {
+        const date = new Date(timestamp);
+
+        const year = date.getUTCFullYear();
+
+        //Goes from 0 to 11 (I need do add + 1 = 12 months)
+        const month = `0${(date.getUTCMonth() + 1)}`.slice(-2);
+
+        const day = `0${date.getUTCDate()}`.slice(-2);
+
+        return `${year}-${month}-${day}`;
     }
 }
 
