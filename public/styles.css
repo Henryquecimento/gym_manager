@@ -185,3 +185,14 @@ a.button {
     text-align: center;
     text-decoration: none;
 }
+
+/* DELETE BUTTON */
+#form-delete button[type="submit"] {
+    background-color: lightcoral;
+    margin-top: 16px;
+}
+
+#form-delete button[type="submit"]:hover {
+    background-color: rgb(248, 149, 149);
+    transition: background-color 300ms;
+}

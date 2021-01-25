@@ -4,7 +4,7 @@ const Intl = require('intl');
 const { age, date } = require('./utils.js');
 
 
-//show
+// show
 exports.show = (req, res) => {
     const { id } = req.params;
 
@@ -24,7 +24,6 @@ exports.show = (req, res) => {
     };
 
     return res.render("instructors/show", { instructor });
-    //return res.send(foundInstructor);
 }
 
 // create
@@ -60,8 +59,6 @@ exports.post = (req, res) => {
         return res.redirect("/instructors");
     });
 
-
-    //return res.send(req.body);
 };
 
 // edit
@@ -90,7 +87,7 @@ exports.edit = (req, res) => {
     let index = 0;
 
     const foundInstructor = data.instructors.find((instructor, foundIndex) => {
-        if( id == instructor.id) {
+        if(id == instructor.id) {
             index = foundIndex;
 
             return true;
@@ -114,4 +111,22 @@ exports.edit = (req, res) => {
 
         return res.redirect(`/instructors/${id}`);
     })
+ }
+
+ // delete
+ exports.delete = (req, res) => {
+    const { id } = req.body;
+    
+    const filteredInstructors = data.instructors.filter(instructors => {
+        return instructors.id != id;
+    });
+
+    data.instructors = filteredInstructors;
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), err => {
+        if (err) return res.send('Write error! -- line 130');
+
+        return res.redirect('/instructors');
+    });
+
  }
