@@ -68,9 +68,6 @@ header {
     background: white;
     width: 800px;
     min-height: 400px;
-    /* border-radius: 12px; 
-    ==To test later / You need to add this property in Section tag===*/ 
-
     margin: 45px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -195,4 +192,28 @@ a.button {
 #form-delete button[type="submit"]:hover {
     background-color: rgb(248, 149, 149);
     transition: background-color 300ms;
+}
+
+/* INDEX CONFIG */
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
 }
