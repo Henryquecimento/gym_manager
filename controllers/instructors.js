@@ -1,36 +1,19 @@
 const fs = require('fs');
-const data = require('./data.json');
+const data = require('../data.json');
 const Intl = require('intl');
-const { age, date } = require('./utils.js');
+const { age, date } = require('../utils.js');
 
 // index
 exports.index = (req, res) => {
     return res.render('instructors/index', { instructors: data.instructors});
 };
 
-// show
-exports.show = (req, res) => {
-    const { id } = req.params;
-
-    const foundInstructor = data.instructors.find((instructor) => {
-        return instructor.id == id;
-    });
-
-    if(!foundInstructor) {
-        return res.send("Instructor not found!");
-    };
-
-    const instructor = {
-        ...foundInstructor,
-        age: age(foundInstructor.birth),
-        services: foundInstructor.services.split(","),
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
-    };
-
-    return res.render("instructors/show", { instructor });
-}
-
 // create
+exports.create = (req, res) => {
+    return res.render('instructors/create');
+};
+
+// put
 exports.post = (req, res) => {
 
     const keys = Object.keys(req.body);
@@ -65,6 +48,28 @@ exports.post = (req, res) => {
 
 };
 
+// show
+exports.show = (req, res) => {
+    const { id } = req.params;
+
+    const foundInstructor = data.instructors.find((instructor) => {
+        return instructor.id == id;
+    });
+
+    if(!foundInstructor) {
+        return res.send("Instructor not found!");
+    };
+
+    const instructor = {
+        ...foundInstructor,
+        age: age(foundInstructor.birth),
+        services: foundInstructor.services.split(","),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
+    };
+
+    return res.render("instructors/show", { instructor });
+};
+
 // edit
 exports.edit = (req, res) => {
     const { id } = req.params;
@@ -74,12 +79,12 @@ exports.edit = (req, res) => {
     });
 
     if(!foundInstructor) {
-        return res.send("Instructor not found!")
+        return res.send("Instructor not found!");
     }
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth).iso
     }
 
     return res.render("instructors/edit", { instructor });
@@ -115,8 +120,8 @@ exports.edit = (req, res) => {
         if(err) return res.send('Write error! - line 113');
 
         return res.redirect(`/instructors/${id}`);
-    })
- }
+    });
+ };
 
  // delete
  exports.delete = (req, res) => {
@@ -134,4 +139,4 @@ exports.edit = (req, res) => {
         return res.redirect('/instructors');
     });
 
- }
+ };

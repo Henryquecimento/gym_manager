@@ -1,4 +1,28 @@
 {
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1554245064-3ab88761ac5d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80",
+      "name": "Mariana Silva Santos",
+      "email": "maahSantos@gmail.com",
+      "birth": 893721600000,
+      "gender": "F",
+      "blood": "B0",
+      "weight": "88",
+      "height": "179"
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1485727749690-d091e8284ef3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80",
+      "name": "Maria Silveira Santos",
+      "email": "MariSantos@gmail.com",
+      "birth": 893721600000,
+      "gender": "F",
+      "blood": "B0",
+      "weight": "88",
+      "height": "179",
+      "id": 2
+    }
+  ],
   "instructors": [
     {
       "id": 1,
