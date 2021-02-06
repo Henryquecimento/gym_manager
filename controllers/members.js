@@ -25,10 +25,10 @@ exports.post = (req, res) => {
 
     birth = Date.parse(req.body.birth);
     let id = 1;
-    const lastMember = data.members[data.members.length - 1].id; //selecting the last MEMBER
+    const lastMember = data.members[data.members.length - 1]; //selecting the last MEMBER
 
     if (lastMember) {
-        id = lastMember + 1;
+        id = lastMember.id + 1;
     }
     // o fato de retornar false e automaticamente ser setado como id = 1 vai ocorrer só na PRIMEIRA VEZ (essa lógica ocorre só uma vez), porque depois eu já terei outros id e sera retornado.
 
@@ -41,7 +41,7 @@ exports.post = (req, res) => {
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
         if (err) return res.send('Write file error!');
 
-        return res.redirect("/members");
+        return res.redirect(`/members/${id}`);
     });
 
 };
